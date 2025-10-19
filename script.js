@@ -1,8 +1,3 @@
-/**
- * Profile Card JavaScript
- * Handles dynamic time updates and interactive features
- */
-
 // Immediately Invoked Function Expression (IIFE) to avoid global scope pollution
 (function () {
   "use strict";

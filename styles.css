@@ -363,7 +363,7 @@ main {
 /* Small mobile (max 480px) */
 @media (max-width: 480px) {
     body {
-        padding: var(--spacing-sm);
+        padding: 72px 16px;
     }
 
     .profile-header {

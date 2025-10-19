@@ -13,6 +13,7 @@ A fully accessible, responsive profile card built with semantic HTML, modern CSS
 ## 🌟 Features
 
 ### ✨ Core Features
+
 - **Fully Responsive Design** - Works seamlessly on mobile, tablet, and desktop devices
 - **Semantic HTML5** - Uses proper HTML5 elements for better SEO and accessibility
 - **WCAG 2.1 Compliant** - Meets accessibility standards for inclusive web experiences
@@ -23,6 +24,7 @@ A fully accessible, responsive profile card built with semantic HTML, modern CSS
 - **Test-Ready** - All elements include `data-testid` attributes for automated testing
 
 ### 🎨 Design Features
+
 - Beautiful gradient backgrounds
 - Smooth animations and transitions
 - Hover effects on interactive elements
@@ -31,6 +33,7 @@ A fully accessible, responsive profile card built with semantic HTML, modern CSS
 - Clean, modern card layout
 
 ### ♿ Accessibility Features
+
 - Semantic HTML structure
 - ARIA labels and descriptions
 - Keyboard navigation support
@@ -42,49 +45,58 @@ A fully accessible, responsive profile card built with semantic HTML, modern CSS
 ## 🚀 Quick Start
 
 ### Prerequisites
+
 - A modern web browser (Chrome, Firefox, Safari, Edge)
 - A text editor (VS Code, Sublime Text, etc.) - optional for modifications
 
 ### Installation & Running Locally
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/toluwalope/stage-zero.git
    ```
 
 2. **Navigate to the project directory**
+
    ```bash
    cd stage-zero
    ```
 
 3. **Open the project**
-   
+
    **Option A: Direct File Opening**
+
    - Simply double-click `index.html` to open it in your default browser
-   
+
    **Option B: Using a Local Server (Recommended)**
-   
+
    Using Python 3:
+
    ```bash
    python3 -m http.server 8000
    ```
-   
+
    Using Python 2:
+
    ```bash
    python -m SimpleHTTPServer 8000
    ```
-   
+
    Using Node.js (if you have `http-server` installed):
+
    ```bash
    npx http-server -p 8000
    ```
-   
+
    Using PHP:
+
    ```bash
    php -S localhost:8000
    ```
-   
+
    Using VS Code Live Server extension:
+
    - Install the "Live Server" extension
    - Right-click on `index.html`
    - Select "Open with Live Server"
@@ -107,7 +119,9 @@ stage-zero/
 ## 🔧 How It Works
 
 ### HTML Structure
+
 The profile card uses semantic HTML5 elements:
+
 - `<article>` - Main profile card container
 - `<header>` - Profile header with avatar and basic info
 - `<nav>` - Social media navigation
@@ -116,7 +130,9 @@ The profile card uses semantic HTML5 elements:
 - `<time>` - Timestamp display
 
 ### CSS Organization
+
 The stylesheet is organized into logical sections:
+
 1. **Reset & Base Styles** - Normalize browser defaults
 2. **CSS Custom Properties** - Color palette, spacing, typography
 3. **Profile Card Styles** - Main component styling
@@ -124,6 +140,7 @@ The stylesheet is organized into logical sections:
 5. **Accessibility Enhancements** - Focus styles, reduced motion, high contrast
 
 ### JavaScript Functionality
+
 - **Time Updates**: Updates timestamp every second using `setInterval`
 - **Accessibility**: Adds ARIA attributes dynamically
 - **Error Handling**: Fallback for failed avatar images
@@ -140,12 +157,15 @@ const userName = document.querySelector('[data-testid="test-user-name"]');
 const userBio = document.querySelector('[data-testid="test-user-bio"]');
 const userTime = document.querySelector('[data-testid="test-user-time"]');
 const userAvatar = document.querySelector('[data-testid="test-user-avatar"]');
-const socialLinks = document.querySelector('[data-testid="test-user-social-links"]');
+const socialLinks = document.querySelector(
+  '[data-testid="test-user-social-links"]'
+);
 const hobbies = document.querySelector('[data-testid="test-user-hobbies"]');
 const dislikes = document.querySelector('[data-testid="test-user-dislikes"]');
 ```
 
 ### Required Test IDs
+
 - ✅ `test-profile-card` - Main card container
 - ✅ `test-user-name` - User's name
 - ✅ `test-user-bio` - Biography paragraph
@@ -162,18 +182,20 @@ const dislikes = document.querySelector('[data-testid="test-user-dislikes"]');
 ## 🎨 Customization
 
 ### Change Colors
+
 Edit the CSS custom properties in `styles.css`:
 
 ```css
 :root {
-    --primary-color: #6366f1;      /* Main brand color */
-    --secondary-color: #8b5cf6;    /* Accent color */
-    --text-primary: #1e293b;       /* Main text color */
-    /* ... more variables */
+  --primary-color: #6366f1; /* Main brand color */
+  --secondary-color: #8b5cf6; /* Accent color */
+  --text-primary: #1e293b; /* Main text color */
+  /* ... more variables */
 }
 ```
 
 ### Update Profile Information
+
 Edit the content in `index.html`:
 
 ```html
@@ -184,32 +206,35 @@ Edit the content in `index.html`:
 <p class="profile-bio" data-testid="test-user-bio">Your biography here...</p>
 
 <!-- Change avatar -->
-<img src="your-image-url.jpg" alt="Your name" data-testid="test-user-avatar">
+<img src="your-image-url.jpg" alt="Your name" data-testid="test-user-avatar" />
 ```
 
 ### Add More Social Links
+
 Add new list items in the social links section:
 
 ```html
 <li>
-    <a href="https://your-link.com" 
-       target="_blank" 
-       rel="noopener noreferrer"
-       data-testid="test-user-social-yournetwork">
-        <svg><!-- your icon --></svg>
-        <span>Your Network</span>
-    </a>
+  <a
+    href="https://your-link.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    data-testid="test-user-social-yournetwork"
+  >
+    <svg><!-- your icon --></svg>
+    <span>Your Network</span>
+  </a>
 </li>
 ```
 
 ## 📱 Responsive Breakpoints
 
-| Device | Breakpoint | Layout |
-|--------|-----------|--------|
-| Mobile | < 480px | Stacked vertical layout |
-| Mobile Large | 480px - 767px | Optimized vertical layout |
-| Tablet | 768px - 1023px | Avatar left, content right |
-| Desktop | ≥ 1024px | Two-column hobbies/dislikes |
+| Device       | Breakpoint     | Layout                      |
+| ------------ | -------------- | --------------------------- |
+| Mobile       | < 480px        | Stacked vertical layout     |
+| Mobile Large | 480px - 767px  | Optimized vertical layout   |
+| Tablet       | 768px - 1023px | Avatar left, content right  |
+| Desktop      | ≥ 1024px       | Two-column hobbies/dislikes |
 
 ## 🌐 Browser Support
 
@@ -259,6 +284,7 @@ Contributions are welcome! Here's how you can help:
 5. Open a Pull Request
 
 ### Contribution Guidelines
+
 - Maintain semantic HTML structure
 - Ensure accessibility standards are met
 - Keep JavaScript vanilla (no frameworks)
@@ -319,6 +345,7 @@ If you encounter any issues or have questions:
 ## 🗺️ Roadmap
 
 Future enhancements planned:
+
 - [ ] Dark mode toggle button
 - [ ] Avatar upload functionality
 - [ ] Animated background particles
