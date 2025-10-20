@@ -1,6 +1,6 @@
-# 🎴 Profile Card Component
+# 🎴 Profile Card Component - Multi-Page Application
 
-A fully accessible, responsive profile card built with semantic HTML, modern CSS, and vanilla JavaScript. This project demonstrates best practices in web development with a focus on accessibility, performance, and clean code.
+A fully accessible, responsive profile card application built with semantic HTML, modern CSS, and vanilla JavaScript. This project demonstrates best practices in web development with a focus on accessibility, performance, and clean code. The application includes a home profile page, contact form with validation, and an about me page.
 
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
 [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
@@ -14,10 +14,12 @@ A fully accessible, responsive profile card built with semantic HTML, modern CSS
 
 ### ✨ Core Features
 
+- **Multi-Page Application** - Three distinct pages: Home, About Me, and Contact
 - **Fully Responsive Design** - Works seamlessly on mobile, tablet, and desktop devices
 - **Semantic HTML5** - Uses proper HTML5 elements for better SEO and accessibility
 - **WCAG 2.1 Compliant** - Meets accessibility standards for inclusive web experiences
 - **Real-time Clock** - Displays current time in milliseconds with auto-updates
+- **Form Validation** - Client-side validation with accessible error messages
 - **Social Media Integration** - Links to GitHub, Twitter, LinkedIn, and Email
 - **Modern CSS** - Utilizes Flexbox, CSS Grid, and custom properties
 - **Vanilla JavaScript** - No frameworks or libraries required
@@ -31,6 +33,8 @@ A fully accessible, responsive profile card built with semantic HTML, modern CSS
 - Focus indicators for keyboard navigation
 - Avatar with hover scale effect
 - Clean, modern card layout
+- Fixed navigation bar
+- Interactive form with real-time validation feedback
 
 ### ♿ Accessibility Features
 
@@ -41,8 +45,43 @@ A fully accessible, responsive profile card built with semantic HTML, modern CSS
 - High contrast mode support
 - Reduced motion support for users with vestibular disorders
 - Focus-visible indicators
+- Form error messages linked with aria-describedby
 
-## 🚀 Quick Start
+## � Pages
+
+### 1. Home Page (`index.html`)
+
+**Stage 0 Completion** - Profile card with:
+
+- Profile avatar
+- Name and biography
+- Real-time timestamp (milliseconds)
+- Social media links
+- Hobbies and dislikes lists
+
+### 2. Contact Us Page (`contact.html`)
+
+**Stage 1 Addition** - Contact form featuring:
+
+- Full name input (required, min 2 characters)
+- Email input (required, valid email format)
+- Subject input (required, min 3 characters)
+- Message textarea (required, min 10 characters)
+- Real-time validation with error messages
+- Success message on valid submission
+- Contact information cards
+
+### 3. About Me Page (`about.html`)
+
+**Stage 1 Addition** - Reflective content including:
+
+- Detailed biography
+- Goals in the program
+- Areas seeking growth/low confidence
+- Note to future self
+- Extra thoughts and reflections
+
+## �🚀 Quick Start
 
 ### Prerequisites
 
@@ -54,7 +93,7 @@ A fully accessible, responsive profile card built with semantic HTML, modern CSS
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/toluwalope/stage-zero.git
+   git clone https://github.com/H4LV3D/stage-zero.git
    ```
 
 2. **Navigate to the project directory**
@@ -110,9 +149,12 @@ A fully accessible, responsive profile card built with semantic HTML, modern CSS
 ```
 stage-zero/
 │
-├── index.html          # Main HTML file with semantic structure
-├── styles.css          # Complete CSS with responsive design
-├── script.js           # Vanilla JavaScript for dynamic features
+├── index.html          # Home page - Profile card (Stage 0)
+├── contact.html        # Contact form page (Stage 1)
+├── about.html          # About me page (Stage 1)
+├── styles.css          # Complete CSS for all pages
+├── script.js           # JavaScript for profile card
+├── contact.js          # JavaScript for contact form validation
 └── README.md           # Project documentation (this file)
 ```
 
@@ -148,6 +190,8 @@ The stylesheet is organized into logical sections:
 
 ## 🧪 Testing
 
+### Stage 0 - Profile Card Test IDs
+
 All required elements include `data-testid` attributes for automated testing:
 
 ```javascript
@@ -164,7 +208,7 @@ const hobbies = document.querySelector('[data-testid="test-user-hobbies"]');
 const dislikes = document.querySelector('[data-testid="test-user-dislikes"]');
 ```
 
-### Required Test IDs
+#### Required Test IDs (Stage 0)
 
 - ✅ `test-profile-card` - Main card container
 - ✅ `test-user-name` - User's name
@@ -178,6 +222,100 @@ const dislikes = document.querySelector('[data-testid="test-user-dislikes"]');
 - ✅ `test-user-social-email` - Email link
 - ✅ `test-user-hobbies` - Hobbies list
 - ✅ `test-user-dislikes` - Dislikes list
+
+### Stage 1 - Contact Form Test IDs
+
+```javascript
+// Contact form elements
+const contactName = document.querySelector('[data-testid="test-contact-name"]');
+const contactEmail = document.querySelector(
+  '[data-testid="test-contact-email"]'
+);
+const contactSubject = document.querySelector(
+  '[data-testid="test-contact-subject"]'
+);
+const contactMessage = document.querySelector(
+  '[data-testid="test-contact-message"]'
+);
+const contactSubmit = document.querySelector(
+  '[data-testid="test-contact-submit"]'
+);
+const contactSuccess = document.querySelector(
+  '[data-testid="test-contact-success"]'
+);
+
+// Error messages
+const errorName = document.querySelector(
+  '[data-testid="test-contact-error-name"]'
+);
+const errorEmail = document.querySelector(
+  '[data-testid="test-contact-error-email"]'
+);
+const errorSubject = document.querySelector(
+  '[data-testid="test-contact-error-subject"]'
+);
+const errorMessage = document.querySelector(
+  '[data-testid="test-contact-error-message"]'
+);
+```
+
+#### Required Test IDs (Contact Page)
+
+- ✅ `test-contact-name` - Full name input field
+- ✅ `test-contact-email` - Email input field
+- ✅ `test-contact-subject` - Subject input field
+- ✅ `test-contact-message` - Message textarea
+- ✅ `test-contact-submit` - Submit button
+- ✅ `test-contact-success` - Success message container
+- ✅ `test-contact-error-name` - Name field error message
+- ✅ `test-contact-error-email` - Email field error message
+- ✅ `test-contact-error-subject` - Subject field error message
+- ✅ `test-contact-error-message` - Message field error message
+
+### Stage 1 - About Me Page Test IDs
+
+```javascript
+// About me sections
+const aboutPage = document.querySelector('[data-testid="test-about-page"]');
+const aboutBio = document.querySelector('[data-testid="test-about-bio"]');
+const aboutGoals = document.querySelector('[data-testid="test-about-goals"]');
+const aboutConfidence = document.querySelector(
+  '[data-testid="test-about-confidence"]'
+);
+const aboutFutureNote = document.querySelector(
+  '[data-testid="test-about-future-note"]'
+);
+const aboutExtra = document.querySelector('[data-testid="test-about-extra"]');
+```
+
+#### Required Test IDs (About Page)
+
+- ✅ `test-about-page` - Main about page container
+- ✅ `test-about-bio` - Biography section
+- ✅ `test-about-goals` - Goals in program section
+- ✅ `test-about-confidence` - Areas of low confidence section
+- ✅ `test-about-future-note` - Note to future self section
+- ✅ `test-about-extra` - Extra thoughts section
+
+## 📋 Form Validation Rules
+
+### Contact Form Validation
+
+| Field   | Rules                                           | Error Messages                           |
+| ------- | ----------------------------------------------- | ---------------------------------------- |
+| Name    | Required, min 2 characters                      | "Full name is required"                  |
+| Email   | Required, valid email format (name@example.com) | "Please enter a valid email"             |
+| Subject | Required, min 3 characters                      | "Subject is required"                    |
+| Message | Required, min 10 characters                     | "Message must be at least 10 characters" |
+
+### Validation Features
+
+- **Real-time validation** - Errors show on blur, clear on input
+- **Accessible errors** - Error messages linked via `aria-describedby`
+- **Visual feedback** - Input borders turn red on error
+- **Keyboard accessible** - Tab navigation, Enter to submit
+- **Success confirmation** - Green message on successful submission
+- **Auto-hide success** - Success message disappears after 5 seconds
 
 ## 🎨 Customization
 
@@ -321,11 +459,12 @@ SOFTWARE.
 
 ## 👤 Author
 
-**Toluwalope Adeyemi**
+**Toluwalope Akinkunmi**
 
-- GitHub: [@toluwalope](https://github.com/toluwalope)
-- Twitter: [@toluwalope](https://twitter.com/toluwalope)
-- LinkedIn: [Toluwalope Adeyemi](https://linkedin.com/in/toluwalope)
+- GitHub: [@H4LV3D](https://github.com/H4LV3D)
+- Twitter: [@kinkunmz\_](https://twitter.com/kinkunmz_)
+- LinkedIn: [Toluwalope Akinkunmi](https://linkedin.com/in/toluwalope-akinkunmi)
+- Email: akinkunmitolulope23@gmail.com
 
 ## 🙏 Acknowledgments
 
@@ -344,15 +483,26 @@ If you encounter any issues or have questions:
 
 ## 🗺️ Roadmap
 
-Future enhancements planned:
+### Completed
+
+- ✅ Stage 0: Profile card with all required elements
+- ✅ Stage 1: Contact form with validation
+- ✅ Stage 1: About me reflective page
+- ✅ Navigation between pages
+- ✅ Fully responsive design
+- ✅ Complete accessibility features
+
+### Future Enhancements
 
 - [ ] Dark mode toggle button
 - [ ] Avatar upload functionality
 - [ ] Animated background particles
 - [ ] Export profile card as image
 - [ ] Multiple theme options
-- [ ] Print-friendly version
 - [ ] QR code for social links
+- [ ] Backend integration for contact form
+- [ ] Form submission to email service
+- [ ] Multi-language support
 
 ## 📊 Performance
 
@@ -374,6 +524,8 @@ Future enhancements planned:
 
 **⭐ Star this repository if you find it helpful! ⭐**
 
-Made with ❤️ by [Toluwalope Adeyemi](https://github.com/toluwalope)
+**Stage 0 & Stage 1 Completed** ✨
+
+Made with ❤️ by [Toluwalope Akinkunmi](https://github.com/H4LV3D)
 
 </div>
